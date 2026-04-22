@@ -1,0 +1,164 @@
+/* WP Product Manager — Admin (Classic Editor Style) */
+
+/* ── 通用侧边栏面板 ─────────────────────────────────────── */
+.wppm-side-box {
+    margin: -6px -12px -12px;
+}
+.wppm-side-row {
+    padding: 10px 12px;
+    border-bottom: 1px solid #f0f0f0;
+}
+.wppm-side-row:last-child { border-bottom: none; }
+.wppm-side-row label { display: block; margin-bottom: 5px; }
+.wppm-side-row .description { font-size: 11px; color: #777; margin: 4px 0 0; display:block; }
+.wppm-side-row input[type="text"],
+.wppm-side-row input[type="number"] { margin-top: 4px; }
+
+/* ── 副图（图片库）─────────────────────────────────────── */
+.wppm-gallery-wrap { padding: 2px 0 4px; }
+
+.wppm-gallery-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    min-height: 72px;
+    padding: 10px;
+    border: 1px dashed #c3c4c7;
+    border-radius: 3px;
+    background: #f9f9f9;
+    margin-bottom: 10px;
+    align-items: flex-start;
+    align-content: flex-start;
+}
+.wppm-gallery-empty {
+    color: #aaa;
+    font-style: italic;
+    font-size: 13px;
+    margin: auto;
+    align-self: center;
+    padding: 10px;
+}
+
+.wppm-gallery-item {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: grab;
+    border: 1px solid #ddd;
+    box-shadow: 0 1px 3px rgba(0,0,0,.1);
+    flex-shrink: 0;
+}
+.wppm-gallery-item:active { cursor: grabbing; }
+.wppm-gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.wppm-remove-image {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 18px;
+    height: 18px;
+    background: rgba(0,0,0,.65);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 10px;
+    line-height: 18px;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .15s;
+    font-style: normal;
+    user-select: none;
+}
+.wppm-gallery-item:hover .wppm-remove-image { opacity: 1; }
+
+.wppm-gallery-actions { margin: 0; display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
+.wppm-danger-btn { color: #d63638 !important; border-color: #d63638 !important; }
+.wppm-danger-btn:hover { background: #d63638 !important; color: #fff !important; }
+
+/* drag placeholder */
+.wppm-gallery-item.ui-sortable-placeholder {
+    visibility: visible !important;
+    background: #e8eaed;
+    border: 2px dashed #b4b9be;
+    box-shadow: none;
+}
+
+/* ── 自定义字段表格 ─────────────────────────────────────── */
+.wppm-cf-wrap { margin: -2px 0; }
+.wppm-cf-table { border: 1px solid #c3c4c7 !important; }
+.wppm-cf-table thead th {
+    background: #f6f7f7;
+    font-weight: 600;
+    font-size: 12px;
+    color: #3c434a;
+    border-bottom: 1px solid #c3c4c7;
+    padding: 7px 8px;
+}
+.wppm-cf-table tbody td {
+    padding: 6px 8px;
+    vertical-align: middle;
+    border-bottom: 1px solid #f0f0f1;
+}
+.wppm-cf-table tbody tr:last-child td { border-bottom: none; }
+.wppm-cf-table tbody tr:hover td { background: #f6f7f7; }
+
+.wppm-col-handle { width: 22px; text-align: center; padding: 0 !important; }
+.wppm-drag-icon {
+    cursor: grab;
+    color: #c3c4c7;
+    font-size: 18px;
+    display: block;
+    text-align: center;
+    line-height: 1;
+    padding: 4px 0;
+}
+.wppm-drag-icon:hover { color: #8c8f94; }
+
+.wppm-cf-table input[type="text"],
+.wppm-cf-table input[type="number"],
+.wppm-cf-table input[type="url"],
+.wppm-cf-table input[type="email"],
+.wppm-cf-table input[type="date"],
+.wppm-cf-table input[type="color"],
+.wppm-cf-table select,
+.wppm-cf-table textarea { font-size: 13px; }
+
+.wppm-cf-table .wppm-remove-field {
+    background: none !important;
+    border: 1px solid #d63638 !important;
+    color: #d63638 !important;
+    padding: 4px 6px !important;
+    min-height: 0 !important;
+    height: 28px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.wppm-cf-table .wppm-remove-field:hover {
+    background: #d63638 !important;
+    color: #fff !important;
+}
+
+/* sortable placeholder */
+.wppm-cf-table .ui-sortable-placeholder {
+    visibility: visible !important;
+    background: #f0f6fc;
+    border: 1px dashed #72aee6;
+    height: 40px;
+}
+
+/* ── 列表页自定义列 ─────────────────────────────────────── */
+.column-wppm_thumb { width: 56px; }
+.column-wppm_thumb img { border-radius: 3px; vertical-align: middle; }
+.column-wppm_sku   { width: 110px; }
+.column-wppm_order { width: 70px; text-align: center; }
+.column-wppm_comments { width: 65px; text-align: center; font-size: 16px; }
